@@ -2,6 +2,7 @@ create TABLE Users(
 user_id SERIAL PRIMARY KEY,
 username VARCHAR(255) UNIQUE,
 password VARCHAR(255),
+email VARCHAR(255) UNIQUE not null,
 gender INT
 );
 
@@ -20,7 +21,7 @@ product_name VARCHAR(255) NOT NULL,
 category INT,
 price INT,
 product_status VARCHAR(255),
-description VARCHAR(255),
+description text,
 location VARCHAR(255) NOT NULL,
 contact INT,
 FOREIGN KEY (user_id) REFERENCES Users(user_id),
